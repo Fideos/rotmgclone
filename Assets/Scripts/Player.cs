@@ -20,6 +20,7 @@ public class Player : MonoBehaviour {
 	
 	void Update () {
 
+        //El personaje no tiene animaciones de caminar de costado pero si de atacar de costado. 
 
         inputX = Input.GetAxis("Side");
         inputY = Input.GetAxis("UpDown");
