@@ -7,9 +7,13 @@ public class ObjectPooler : MonoBehaviour {
 
     public static ObjectPooler SharedInstance;
     public List<GameObject> pooledObjects;
-    public GameObject objectToPool;
+	public GameObject objectToPool;
     public int maxPooling;
 
+
+	public void returnPooledObject(GameObject objectToReturn){
+		objectToReturn.SetActive (false);
+	}
 
     public GameObject GetPooledObject()
     {
@@ -22,7 +26,6 @@ public class ObjectPooler : MonoBehaviour {
         }
         return null;
     }
-
 
     void Awake()
     {

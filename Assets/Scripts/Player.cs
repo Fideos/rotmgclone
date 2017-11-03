@@ -5,31 +5,33 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
 
-    private float speed = 10f;
+    private float speed = 20f;
     private float inputX;
     private float inputY;
     Vector3 vectorDirector;
     Vector3 targetPosition;
+	public Rigidbody2D rb;
 
 
     void Start () {
 
-        
+		rb = GetComponent<Rigidbody2D>();
 
     }
-	
-	void Update () {
+		
+	void Update (){
 
-        //El personaje no tiene animaciones de caminar de costado pero si de atacar de costado. 
 
+
+	}
+
+	void FixedUpdate () 
+	{
+		
         inputX = Input.GetAxis("Side");
         inputY = Input.GetAxis("UpDown");
         vectorDirector = new Vector3(inputX, inputY).normalized;
-        targetPosition = transform.position + vectorDirector * speed;
-        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime);
-
-
-
-
+        targetPosition =  vectorDirector * speed;
+		rb.MovePosition(transform.position + targetPosition * Time.fixedDeltaTime);
     }
 }
