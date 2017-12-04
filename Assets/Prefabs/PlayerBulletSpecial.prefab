@@ -19,9 +19,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4295138673386360}
-  - component: {fileID: 50374576753828694}
   - component: {fileID: 58961386929919310}
   - component: {fileID: 212089426017450060}
+  - component: {fileID: 50374576753828694}
   m_Layer: 0
   m_Name: PlayerBulletSpecial
   m_TagString: Untagged
