@@ -24,9 +24,11 @@ GameObject:
   - component: {fileID: 114903498214336242}
   - component: {fileID: 50701795996665244}
   - component: {fileID: 70441215304321308}
+  - component: {fileID: 70727434508234192}
   - component: {fileID: 114427657001898970}
   - component: {fileID: 82202697143038146}
-  m_Layer: 8
+  - component: {fileID: 82292176450535800}
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -45,7 +47,7 @@ GameObject:
   - component: {fileID: 92547236311055148}
   - component: {fileID: 124815079186714884}
   - component: {fileID: 81988533990663002}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -60,7 +62,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4463541902456378}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Shooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,6 +180,21 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 1}
   m_Size: {x: 2, y: 2}
   m_Direction: 0
+--- !u!70 &70727434508234192
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1095139773892952}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 1}
+  m_Size: {x: 2, y: 2}
+  m_Direction: 0
 --- !u!81 &81988533990663002
 AudioListener:
   m_ObjectHideFlags: 1
@@ -265,6 +282,86 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!82 &82292176450535800
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1095139773892952}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5dda9145cd62bbf4d920e06ef4d64361, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!92 &92547236311055148
 Behaviour:
   m_ObjectHideFlags: 1
@@ -315,6 +412,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 50701795996665244}
+  maxHealth: 5
+  hurtSound: {fileID: 8300000, guid: 5dda9145cd62bbf4d920e06ef4d64361, type: 3}
 --- !u!124 &124815079186714884
 Behaviour:
   m_ObjectHideFlags: 1

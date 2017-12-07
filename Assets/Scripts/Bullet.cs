@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
+    public float lifeTime; //Determina tiempo de vida de la bullet
     public Rigidbody2D rb;
     bool active = true;
+
+
+    IEnumerator Yielder() // Eliminar este destructor despues de implementar object pool.
+    {
+        yield return new WaitForSeconds(lifeTime);
+        Destroy(this.gameObject);
+    }
 
     //Recogido de bullets se va a implementar mas tarde
     void OnCollisionEnter2D()
     {
         rb.velocity = Vector3.zero;
+        StartCoroutine("Yielder");
         active = false;
     }
 
@@ -19,11 +28,10 @@ public class Bullet : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
     }
 
-	// Update is called once per frame
 	void Update () {
         if (active)
         {
-            transform.Rotate(0, 0, 360 * Time.deltaTime);
+            transform.Rotate(0, 0, 720 * Time.deltaTime);
         }
         else
         {

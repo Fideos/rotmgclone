@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour {
 
-    private float speed = 1000f;
+    private float speed = 1200f;
     public GameObject bullet;
     GameObject bulletClone;
     public AudioClip shootSound;
@@ -12,6 +12,7 @@ public class PlayerShoot : MonoBehaviour {
     Vector3 target;
     private AudioSource source;
 
+    // Reproduce el audio en 2 distintos volumenes aleatoriamente.
     private float volLowRange = .5f;
     private float volHighRange = 1.0f;
 
