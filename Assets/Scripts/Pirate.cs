@@ -7,20 +7,16 @@ public class Pirate : MonoBehaviour {
 
 
     public Rigidbody2D rb;
-    public Transform player;
-    private int inputX;
-    private int inputY;
+    public float intervalo;
     Vector3 vectorDirector;
     Vector3 targetPosition;
-    private float speed = 15f;
+    private float speed = 750f, timer;
     public int maxLife;
-    int X;
-    int Y;
+    int X, Y;
 
     private ParticleSystem particles;
 
     // Audio
-    public AudioClip deathSound;
 
     public AudioClip hurtSound;
 
@@ -30,14 +26,18 @@ public class Pirate : MonoBehaviour {
 
     private float vol = 0.3f;
 
-    bool range;
-
-    IEnumerator Yielder() // Espera 2 segundos y destruye el objeto
+    void RandomDirections()
     {
-        yield return new WaitForSeconds(1);
-        source.PlayOneShot(deathSound, vol);
-        yield return new WaitForSeconds(1);
-        Destroy(this.gameObject);
+        X = Random.Range(-9, 10);
+        Y = Random.Range(-9, 10);
+    }
+
+    void Movement()
+    {
+        RandomDirections();
+        targetPosition = new Vector3(X, Y);
+        vectorDirector = targetPosition - transform.position;
+        rb.AddForce(vectorDirector.normalized * speed);
     }
 
     void Start()
@@ -50,7 +50,7 @@ public class Pirate : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag == "Bullet")
+        if (col.tag == "Bullet" && maxLife > 0)
         {
             maxLife--;
             particles.Play();
@@ -59,42 +59,20 @@ public class Pirate : MonoBehaviour {
         //Checkea si esta muerto.
         if (maxLife <= 0)
         {
-            StartCoroutine("Yielder");
+            Destroy(this.gameObject);
         }
     }
 
     void Awake () {
 
-        range = false;
         rb = GetComponent<Rigidbody2D>();
         source = GetComponent<AudioSource>();
         particles = GetComponent<ParticleSystem>();
 
     }
 
-
-
-    IEnumerator numeroRandom() // Espera 2 segundos y destruye el objeto
-    {
-        yield return new WaitForSeconds(1);
-        X = Random.Range(-9, 10);
-        yield return new WaitForSeconds(1);
-        Y = Random.Range(-9, 10);
-
-        yield return new WaitForSeconds(3);
-        vectorDirector = new Vector3(X, Y).normalized;
-        targetPosition = vectorDirector * speed;
-        rb.MovePosition(transform.position + targetPosition * Time.fixedDeltaTime);
-    }
-
-
     void Update()
     {
-        if (maxLife <= 0)
-        {
-            transform.Rotate(0, 0, 360 * Time.deltaTime);
-        }
-
         // Caminar hacia el jugador. (Debe asignarse el transform del player para que funcione)
         /*
         playerPos = player.position - transform.position;
@@ -104,9 +82,13 @@ public class Pirate : MonoBehaviour {
 
         */
 
-        StartCoroutine("numeroRandom");
+        timer = timer + 1 * Time.deltaTime;
 
-        
+        if (timer > intervalo)
+        {
+            Movement();
+            timer = timer - intervalo;
+        }
     }
 
 }

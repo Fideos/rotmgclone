@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour {
 
-    Vector3 vectorDirector;
     public int maxLife;
+
 
     private ParticleSystem particles;
 
@@ -19,17 +19,9 @@ public class Turret : MonoBehaviour {
 
     private float vol = 0.3f;
 
-    bool range;
-
-    IEnumerator Yielder() // Espera 2 segundos y destruye el objeto
-    {
-        yield return new WaitForSeconds(2);
-        Destroy(this.gameObject);
-    }
-
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag == "Bullet")
+        if (col.tag == "Bullet" && maxLife > 0)
         {
             maxLife--;
             particles.Play();
@@ -38,14 +30,13 @@ public class Turret : MonoBehaviour {
         //Checkea si esta muerto.
         if (maxLife <= 0)
         {
-            StartCoroutine("Yielder");
+            Destroy(this.gameObject);
         }
     }
 
     void Awake()
     {
 
-        range = false;
         source = GetComponent<AudioSource>();
         particles = GetComponent<ParticleSystem>();
 
@@ -53,10 +44,6 @@ public class Turret : MonoBehaviour {
 
     void Update()
     {
-        if (maxLife <= 0)
-        {
-            transform.Rotate(0, 0, 360 * Time.deltaTime);
-        }
     }
 
 }

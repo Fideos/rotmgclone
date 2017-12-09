@@ -6,12 +6,12 @@ public class EnemyShoot : MonoBehaviour {
 
     public GameObject bullet;
     public float fireRate; // Intervalo en segundos entre cada bullet.
-    public Transform target; // Debe setearse con el Player que se encuentra en escena.
     public Transform enemyPos;
-
+    Transform target;
     float bulletSpeed = 1000f;
     GameObject bulletClone;
     Vector3 targetPos;
+    GameObject playerPos;
     float timer;
     bool fire;
     //bool range;
@@ -25,10 +25,12 @@ public class EnemyShoot : MonoBehaviour {
     }
 
     void Awake () {
-	}
+        target = GameObject.FindGameObjectWithTag("Player").transform; //Busca a Player en escena y lo asigna.
+    }
 	
 
 	void Update () {
+
         timer = timer + 1 * Time.deltaTime;
 
         if (timer > fireRate)
