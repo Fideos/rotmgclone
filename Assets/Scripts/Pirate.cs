@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Pirate : MonoBehaviour {
 
 
     public Rigidbody2D rb;
     public Transform player;
-    Vector3 playerPos;
+    private int inputX;
+    private int inputY;
     Vector3 vectorDirector;
+    Vector3 targetPosition;
     private float speed = 15f;
     public int maxLife;
+    int X;
+    int Y;
 
     private ParticleSystem particles;
 
@@ -33,6 +38,14 @@ public class Pirate : MonoBehaviour {
         source.PlayOneShot(deathSound, vol);
         yield return new WaitForSeconds(1);
         Destroy(this.gameObject);
+    }
+
+    void Start()
+    {
+
+        rb = GetComponent<Rigidbody2D>();
+        source = GetComponent<AudioSource>();
+
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -59,6 +72,22 @@ public class Pirate : MonoBehaviour {
 
     }
 
+
+
+    IEnumerator numeroRandom() // Espera 2 segundos y destruye el objeto
+    {
+        yield return new WaitForSeconds(1);
+        X = Random.Range(-9, 10);
+        yield return new WaitForSeconds(1);
+        Y = Random.Range(-9, 10);
+
+        yield return new WaitForSeconds(3);
+        vectorDirector = new Vector3(X, Y).normalized;
+        targetPosition = vectorDirector * speed;
+        rb.MovePosition(transform.position + targetPosition * Time.fixedDeltaTime);
+    }
+
+
     void Update()
     {
         if (maxLife <= 0)
@@ -72,7 +101,12 @@ public class Pirate : MonoBehaviour {
         vectorDirector = new Vector3(playerPos.x, playerPos.y).normalized;
         playerPos = vectorDirector * speed;
         rb.MovePosition(transform.position + playerPos * Time.fixedDeltaTime);
+
         */
+
+        StartCoroutine("numeroRandom");
+
+        
     }
 
 }
