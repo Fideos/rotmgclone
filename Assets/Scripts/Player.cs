@@ -12,8 +12,6 @@ public class Player : MonoBehaviour {
     Vector3 targetPosition;
     public Rigidbody2D rb;
 
-    public int maxHealth;
-
     //Audio (Para reproducir el audio, el clip debe estar en el objeto como un AudioSource y en el Script como un AudioClip)
 
     public AudioClip hurtSound;
@@ -27,7 +25,8 @@ public class Player : MonoBehaviour {
     {
         if (col.tag == "EnemyBullet")
         {
-			MyGameManager.instance.restarVida();
+            source.PlayOneShot(hurtSound, vol);
+            MyGameManager.instance.restarVida();
         }
     }
 

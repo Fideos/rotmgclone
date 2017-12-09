@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MeleeWeapon : MonoBehaviour {
 
+    public float rotationSpeed;
+
     public Rigidbody2D rb;
 
     void Start()
@@ -13,6 +15,6 @@ public class MeleeWeapon : MonoBehaviour {
 
     void Update()
     {
-        transform.Rotate(0, 0, 720 * Time.deltaTime);
+        transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
     }
 }

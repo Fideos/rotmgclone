@@ -51,7 +51,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4396222414247700}
   - component: {fileID: 212861487677392216}
-  - component: {fileID: 114854905022810844}
+  - component: {fileID: 114987577017088568}
   - component: {fileID: 114353438471778658}
   - component: {fileID: 50401448023738924}
   - component: {fileID: 70073143049713162}
@@ -250,7 +250,7 @@ MonoBehaviour:
   bullet: {fileID: 1959852051594080, guid: 300999c401b420245b1e18b4c92f8d9b, type: 2}
   fireRate: 2
   enemyPos: {fileID: 4229752825938312}
---- !u!114 &114854905022810844
+--- !u!114 &114987577017088568
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -258,12 +258,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1950067087370978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b918a42c5cba3794e9a3989d874ad61f, type: 3}
+  m_Script: {fileID: 11500000, guid: a969992675e8a2141abf95d2ad798d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   intervalo: 0.5
   maxLife: 2
+  pocion: {fileID: 1844275127297706, guid: 57c359602b82c1a40bea61d661dd9a78, type: 2}
+  origin: {fileID: 0}
   hurtSound: {fileID: 8300000, guid: 39618720ee77e754bb76e6077af2f3d5, type: 3}
 --- !u!198 &198788733930789944
 ParticleSystem:

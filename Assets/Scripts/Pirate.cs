@@ -47,6 +47,7 @@ public class Pirate : MonoBehaviour {
 
         rb = GetComponent<Rigidbody2D>();
         source = GetComponent<AudioSource>();
+        origin = this.transform;
 
     }
 

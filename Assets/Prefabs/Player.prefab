@@ -21,10 +21,10 @@ GameObject:
   - component: {fileID: 4799670542091544}
   - component: {fileID: 95066624032183626}
   - component: {fileID: 212563606461477154}
-  - component: {fileID: 114903498214336242}
   - component: {fileID: 50701795996665244}
   - component: {fileID: 70441215304321308}
   - component: {fileID: 70727434508234192}
+  - component: {fileID: 114975955481089908}
   - component: {fileID: 114427657001898970}
   - component: {fileID: 82202697143038146}
   - component: {fileID: 82292176450535800}
@@ -400,7 +400,7 @@ MonoBehaviour:
   bullet: {fileID: 1468927324339892, guid: 5e5f891cb5bf7a3459512a56cfe1d763, type: 2}
   shootSound: {fileID: 8300000, guid: 7dd9f237516a7e948af7706187bd1634, type: 3}
   origin: {fileID: 4463541902456378}
---- !u!114 &114903498214336242
+--- !u!114 &114975955481089908
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -408,10 +408,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1095139773892952}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8010058f42917c3489bc87a6c52cc3f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dfe4fb0d483c2941a042d7231528b5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 50701795996665244}
+  rb: {fileID: 0}
   maxHealth: 5
   hurtSound: {fileID: 8300000, guid: 5dda9145cd62bbf4d920e06ef4d64361, type: 3}
 --- !u!124 &124815079186714884
