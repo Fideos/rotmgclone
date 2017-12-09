@@ -13,6 +13,8 @@ public class Pirate : MonoBehaviour {
     private float speed = 750f, timer;
     public int maxLife;
     int X, Y;
+	public GameObject pocion;
+	public Transform origin;
 
     private ParticleSystem particles;
 
@@ -60,6 +62,17 @@ public class Pirate : MonoBehaviour {
         if (maxLife <= 0)
         {
             Destroy(this.gameObject);
+
+			int probabilidad = Random.Range (1, 11);
+
+
+			if (probabilidad >= 5)
+			{
+
+				GameObject Pocion = Instantiate(pocion, origin.position, origin.rotation) as GameObject;
+
+			}
+
         }
     }
 

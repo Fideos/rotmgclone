@@ -27,9 +27,7 @@ public class Player : MonoBehaviour {
     {
         if (col.tag == "EnemyBullet")
         {
-            source.PlayOneShot(hurtSound, vol);
-            maxHealth--;
-            Debug.Log("Vida del personaje: " + maxHealth);
+			MyGameManager.instance.restarVida();
         }
     }
 
