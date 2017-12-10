@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: eefeff90ac95ecb4d85338e42c6c9fe9
-timeCreated: 1512350423
+guid: cb4904af19044c043a02d7f08264b4a1
+timeCreated: 1512863518
 licenseType: Free
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 21
   fileIDToRecycleName:
     100000: Dun1_mesh_0001
     100002: //RootNode
@@ -12,12 +12,10 @@ ModelImporter:
     2300000: Dun1_mesh_0001
     3300000: Dun1_mesh_0001
     4300000: Dun1_mesh_0001
-  externalObjects: {}
   materials:
     importMaterials: 0
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
   animations:
     legacyGenerateAnimations: 0
     bakeSimulation: 0
@@ -30,7 +28,6 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

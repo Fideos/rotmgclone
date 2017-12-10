@@ -12,6 +12,8 @@ public class Player : MonoBehaviour {
     Vector3 targetPosition;
     public Rigidbody2D rb;
 
+    private Animator anim;
+
     //Audio (Para reproducir el audio, el clip debe estar en el objeto como un AudioSource y en el Script como un AudioClip)
 
     public AudioClip hurtSound;
@@ -34,6 +36,7 @@ public class Player : MonoBehaviour {
 
         rb = GetComponent<Rigidbody2D>();
         source = GetComponent<AudioSource>();
+        anim = GetComponent<Animator>();
 
     }
 
@@ -45,5 +48,102 @@ public class Player : MonoBehaviour {
         vectorDirector = new Vector3(inputX, inputY).normalized;
         targetPosition =  vectorDirector * speed;
 		rb.MovePosition(transform.position + targetPosition * Time.fixedDeltaTime);
+
+        
+    }
+
+    void Update()
+    {
+
+        /*
+        if (inputY == 1)
+        {
+            anim.SetInteger("Lado", 1);
+            anim.SetBool("Camina", true);
+
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                anim.SetBool("Ataca", true);
+            }
+            else if (Input.GetKeyUp(KeyCode.Mouse0))
+            {
+                anim.SetBool("Ataca", false);
+            }
+        }
+        if (inputY == 0)
+        {
+            anim.SetInteger("Lado", 1);
+            anim.SetBool("Run", false);
+        }
+
+
+        if (inputX == 1)
+        {
+            anim.SetInteger("Lado", 0);
+            anim.SetBool("Camina", true);
+
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                anim.SetBool("Ataca", true);
+            }
+            else if (Input.GetKeyUp(KeyCode.Mouse0))
+            {
+                anim.SetBool("Ataca", false);
+            }
+        }
+        if (inputX == 0)
+        {
+            anim.SetInteger("Lado", 0);
+            anim.SetBool("Run", false);
+        }
+
+
+
+
+        if (inputX == -1)
+        {
+            anim.SetInteger("Lado", 2);
+            anim.SetBool("Camina", true);
+
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                anim.SetBool("Ataca", true);
+            }
+            else if (Input.GetKeyUp(KeyCode.Mouse0))
+            {
+                anim.SetBool("Ataca", false);
+            }
+        }
+        if (inputX == 0)
+        {
+            anim.SetInteger("Lado", 2);
+            anim.SetBool("Run", false);
+        }
+
+
+
+
+        if (inputY == -1)
+        {
+            anim.SetInteger("Lado", 1);
+            transform.Rotate(Vector3.up, 180);
+            anim.SetBool("Camina", true);
+
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                anim.SetBool("Ataca", true);
+            }
+            else if (Input.GetKeyUp(KeyCode.Mouse0))
+            {
+                anim.SetBool("Ataca", false);
+            }
+        }
+        if (inputY == 0)
+        {
+            anim.SetInteger("Lado", 1);
+            anim.SetBool("Run", false);
+            transform.Rotate(Vector3.up, 180);
+        }
+        */
     }
 }

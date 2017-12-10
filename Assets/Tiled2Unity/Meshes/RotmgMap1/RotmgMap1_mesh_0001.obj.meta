@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: f6e79ca82c523144295f91422bea27c8
-timeCreated: 1511914647
+guid: e4eb05f304e125a489c7377710478289
+timeCreated: 1512863519
 licenseType: Free
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 21
   fileIDToRecycleName:
     100000: RotmgMap1_mesh_0001
     100002: //RootNode
@@ -12,12 +12,10 @@ ModelImporter:
     2300000: RotmgMap1_mesh_0001
     3300000: RotmgMap1_mesh_0001
     4300000: RotmgMap1_mesh_0001
-  externalObjects: {}
   materials:
     importMaterials: 0
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
   animations:
     legacyGenerateAnimations: 0
     bakeSimulation: 0
@@ -30,7 +28,6 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
