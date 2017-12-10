@@ -14,7 +14,8 @@ public class Pirate : MonoBehaviour {
     public int maxLife;
     int X, Y;
 	public GameObject pocion;
-	public Transform origin;
+    public Transform origin;
+    GameObject pocionClone;
 
     private ParticleSystem particles;
 
@@ -70,7 +71,7 @@ public class Pirate : MonoBehaviour {
 			if (probabilidad >= 5)
 			{
 
-				GameObject Pocion = Instantiate(pocion, origin.position, origin.rotation) as GameObject;
+				pocionClone = Instantiate(pocion, origin.position, origin.rotation) as GameObject;
 
 			}
 
