@@ -15,7 +15,6 @@ public class Pirate : MonoBehaviour {
     int X, Y;
 	public GameObject pocion;
     public Transform origin;
-    GameObject pocionClone;
 
     private ParticleSystem particles;
 
@@ -71,7 +70,7 @@ public class Pirate : MonoBehaviour {
 			if (probabilidad >= 5)
 			{
 
-				pocionClone = Instantiate(pocion, origin.position, origin.rotation) as GameObject;
+				Instantiate(pocion, origin.position, origin.rotation);
 
 			}
 
