@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour {
-
-    public float respawntime;
-
+    /*
     public GameObject spawner;
 
     bool triggered = false;
@@ -24,5 +22,5 @@ public class Spawner : MonoBehaviour {
             DesactivateSpawner();
         }
     }
-
+    */
 }

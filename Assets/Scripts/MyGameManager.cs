@@ -8,23 +8,36 @@ public class MyGameManager : MonoBehaviour
 	public static MyGameManager instance;
 
 
-	public float vida;
+    public float vida;
 
-	void Awake()
+    public AudioClip healPotion;
+
+    private AudioSource source;
+
+    private float vol = 0.3f;
+
+    void Awake()
 	{
 		if (instance == null)
-			instance = this;
-		else
-			Destroy(this.gameObject);
-	}
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+
+        source = GetComponent<AudioSource>();
+    }
 
 	public void sumarVida()
 	{
 		if (vida < 5)
 		{
 			vida++;
-			Debug.Log("Vida del personaje: " + vida);
-		}
+            Debug.Log("Vida del personaje: " + vida);
+            source.PlayOneShot(healPotion, vol);
+        }
 	}
 	public void restarVida()
 	{

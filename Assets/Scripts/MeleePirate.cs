@@ -10,6 +10,8 @@ public class MeleePirate : MonoBehaviour {
     public float speed;
     public int maxLife;
     Transform player;
+    public GameObject pocion;
+    public Transform origin;
 
     private ParticleSystem particles;
 
@@ -23,15 +25,6 @@ public class MeleePirate : MonoBehaviour {
 
     private float vol = 0.3f;
 
-    void Start()
-    {
-
-        rb = GetComponent<Rigidbody2D>();
-        source = GetComponent<AudioSource>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-
-    }
-
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "Bullet" && maxLife > 0)
@@ -44,6 +37,16 @@ public class MeleePirate : MonoBehaviour {
         if (maxLife <= 0)
         {
             Destroy(this.gameObject);
+
+            int probabilidad = Random.Range(1, 11);
+
+
+            if (probabilidad >= 5)
+            {
+
+                Instantiate(pocion, origin.position, origin.rotation);
+
+            }
         }
     }
 
@@ -53,6 +56,8 @@ public class MeleePirate : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         source = GetComponent<AudioSource>();
         particles = GetComponent<ParticleSystem>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        origin = this.transform;
 
     }
 

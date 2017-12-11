@@ -320,6 +320,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   speed: 12
   maxLife: 4
+  pocion: {fileID: 1844275127297706, guid: 57c359602b82c1a40bea61d661dd9a78, type: 2}
+  origin: {fileID: 0}
   hurtSound: {fileID: 8300000, guid: 39618720ee77e754bb76e6077af2f3d5, type: 3}
 --- !u!198 &198832049594378810
 ParticleSystem:

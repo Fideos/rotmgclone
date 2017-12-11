@@ -42,15 +42,6 @@ public class Pirate : MonoBehaviour {
         rb.AddForce(vectorDirector.normalized * speed);
     }
 
-    void Start()
-    {
-
-        rb = GetComponent<Rigidbody2D>();
-        source = GetComponent<AudioSource>();
-        origin = this.transform;
-
-    }
-
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "Bullet" && maxLife > 0)
@@ -81,21 +72,13 @@ public class Pirate : MonoBehaviour {
 
         rb = GetComponent<Rigidbody2D>();
         source = GetComponent<AudioSource>();
+        origin = this.transform;
         particles = GetComponent<ParticleSystem>();
 
     }
 
     void Update()
     {
-        // Caminar hacia el jugador. (Debe asignarse el transform del player para que funcione)
-        /*
-        playerPos = player.position - transform.position;
-        vectorDirector = new Vector3(playerPos.x, playerPos.y).normalized;
-        playerPos = vectorDirector * speed;
-        rb.MovePosition(transform.position + playerPos * Time.fixedDeltaTime);
-
-        */
-
         timer = timer + 1 * Time.deltaTime;
 
         if (timer > intervalo)

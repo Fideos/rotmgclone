@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Pocion : MonoBehaviour {
 
+
     bool triggered = false;
 
     void DestroyThisObject()
