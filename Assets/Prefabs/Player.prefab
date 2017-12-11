@@ -315,9 +315,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 918df5871cbe5004cbbaee99bc1cc95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  specialBonusSpeed: 2400
   bullet: {fileID: 1468927324339892, guid: 5e5f891cb5bf7a3459512a56cfe1d763, type: 2}
+  specialBullet: {fileID: 1533039447011398, guid: ab362628a4999304c9316b464a6f4515,
+    type: 2}
   shootSound: {fileID: 8300000, guid: 7dd9f237516a7e948af7706187bd1634, type: 3}
   origin: {fileID: 4463541902456378}
+  specialBulletCooldown: 7
 --- !u!114 &114975955481089908
 MonoBehaviour:
   m_ObjectHideFlags: 1
