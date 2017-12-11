@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  speed: 15
+  speed: 12
   maxLife: 4
   hurtSound: {fileID: 8300000, guid: 39618720ee77e754bb76e6077af2f3d5, type: 3}
 --- !u!198 &198832049594378810

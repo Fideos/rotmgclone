@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1936234050334834, guid: f940459e20605c94da224977cfe2fd27, type: 2}
-  fireRate: 0.8
+  fireRate: 1
   enemyPos: {fileID: 4619772750548314}
 --- !u!114 &114952677910364780
 MonoBehaviour:

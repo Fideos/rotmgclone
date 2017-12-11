@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour {
 
+    public float respawntime;
+
     public GameObject spawner;
 
     bool triggered = false;
 
-    void DestroySpawner()
+    void DesactivateSpawner()
     {
         Destroy(this.gameObject);
     }
@@ -19,7 +21,7 @@ public class Spawner : MonoBehaviour {
         {
             triggered = true;
             Instantiate(spawner, spawner.transform.position, spawner.transform.rotation);
-            DestroySpawner();
+            DesactivateSpawner();
         }
     }
 
