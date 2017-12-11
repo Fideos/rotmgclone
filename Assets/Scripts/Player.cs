@@ -77,7 +77,6 @@ public class Player : MonoBehaviour {
         }
         if (Input.GetKeyUp(KeyCode.D))
         {
-            anim.SetInteger("Lado", 1);
             anim.SetBool("Camina", false);
         }
 
@@ -89,8 +88,7 @@ public class Player : MonoBehaviour {
 
         }
         if (Input.GetKeyUp(KeyCode.W))
-        {
-            anim.SetInteger("Lado", 0);
+        {;
             anim.SetBool("Camina", false);
         }
 
@@ -105,7 +103,6 @@ public class Player : MonoBehaviour {
         }
         if (Input.GetKeyUp(KeyCode.S))
         {
-            anim.SetInteger("Lado", 2);
             anim.SetBool("Camina", false);
         }
 
@@ -127,7 +124,6 @@ public class Player : MonoBehaviour {
         }
         if (Input.GetKeyUp(KeyCode.A))
         {
-            anim.SetInteger("Lado", 1);
             anim.SetBool("Camina", false);
         }
 
