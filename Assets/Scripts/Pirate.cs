@@ -12,10 +12,9 @@ public class Pirate : MonoBehaviour {
     Vector3 targetPosition;
     private float speed = 750f, timer;
     public int maxLife;
-    int X, Y;
+    float X, Y;
 	public GameObject pocion;
     public Transform origin;
-    GameObject pocionClone;
 
     private ParticleSystem particles;
 
@@ -31,8 +30,8 @@ public class Pirate : MonoBehaviour {
 
     void RandomDirections()
     {
-        X = Random.Range(-9, 10);
-        Y = Random.Range(-9, 10);
+        X = Random.Range(origin.position.x-10, origin.position.x+10);
+        Y = Random.Range(origin.position.y-10, origin.position.y+10);
     }
 
     void Movement()
@@ -71,7 +70,7 @@ public class Pirate : MonoBehaviour {
 			if (probabilidad >= 5)
 			{
 
-				pocionClone = Instantiate(pocion, origin.position, origin.rotation) as GameObject;
+				Instantiate(pocion, origin.position, origin.rotation);
 
 			}
 

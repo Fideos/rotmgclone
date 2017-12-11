@@ -10,6 +10,7 @@ public class ObjectPooler : MonoBehaviour {
 	public GameObject objectToPool;
     public int maxPooling;
 
+    //Object pooler no esta terminada.
 
 	public void returnPooledObject(GameObject objectToReturn){
 		objectToReturn.SetActive (false);

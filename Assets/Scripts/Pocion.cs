@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Pocion : MonoBehaviour {
 
+    bool triggered = false;
+
     void DestroyThisObject()
     {
         Destroy(gameObject);
@@ -12,7 +14,7 @@ public class Pocion : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other)
 	{
 
-		if (other.tag == "Player")
+		if (other.tag == "Player" && triggered == false)
 		{
 			MyGameManager.instance.sumarVida();
             DestroyThisObject();

@@ -203,8 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1936234050334834, guid: f940459e20605c94da224977cfe2fd27, type: 2}
-  fireRate: 0.5
-  target: {fileID: 0}
+  fireRate: 1
   enemyPos: {fileID: 4619772750548314}
 --- !u!114 &114952677910364780
 MonoBehaviour:
@@ -217,7 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5582876ed2a16674fa6cb70bb30a2a3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 4
+  maxLife: 3
   hurtSound: {fileID: 8300000, guid: 04f38c99a19504941a03a67dcd8dec57, type: 3}
 --- !u!198 &198402024413640074
 ParticleSystem:
