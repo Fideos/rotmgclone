@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour {
-    /*
     public GameObject spawner;
 
     bool triggered = false;
 
-    void DesactivateSpawner()
+    void DeactivateSpawner()
     {
         Destroy(this.gameObject);
     }
@@ -19,8 +18,7 @@ public class Spawner : MonoBehaviour {
         {
             triggered = true;
             Instantiate(spawner, spawner.transform.position, spawner.transform.rotation);
-            DesactivateSpawner();
+            DeactivateSpawner();
         }
     }
-    */
 }
