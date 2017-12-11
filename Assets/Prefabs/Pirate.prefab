@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 82521609506248928}
   - component: {fileID: 198788733930789944}
   - component: {fileID: 199317990811446204}
+  - component: {fileID: 95605987008284890}
   m_Layer: 11
   m_Name: Pirate
   m_TagString: Untagged
@@ -236,6 +237,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95605987008284890
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1950067087370978}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd2284508299f50409e688727592a7fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114353438471778658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -327,7 +345,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2054312120
+  randomSeed: -1806079557
   InitialModule:
     serializedVersion: 3
     enabled: 1
