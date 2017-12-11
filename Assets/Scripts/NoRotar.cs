@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class NoRotar : MonoBehaviour {
 
-    Quaternion rotation;
+    GameObject player;
+    private Vector3 distance;
+
     void Awake()
     {
-        rotation = transform.rotation;
+        player = GameObject.FindGameObjectWithTag("Player");
+        distance = transform.position - player.transform.position;
     }
-    void LateUpdate()
+
+    void Update()
     {
-        transform.rotation = rotation;
+        transform.position = player.transform.position + distance;
     }
+
 }
